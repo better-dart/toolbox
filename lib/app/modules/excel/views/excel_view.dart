@@ -146,6 +146,81 @@ class ExcelView extends GetView<ExcelController> {
                     ],
                   ).asNiku()
                     ..itemsCenter(),
+
+                  ///
+                  ///
+                  ///
+                  Padding(
+                    padding: EdgeInsets.only(top: 20),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.file_present,
+                          color: Colors.orange,
+                        ),
+                        SizedBox(width: 10),
+                        Text('筛选第几列:').asNiku()
+                          ..fontSize(20)
+                          ..color(Colors.orange),
+                        SizedBox(width: 10),
+                        Obx(() => Container(
+                              // padding: EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                color: Colors.deepPurple,
+                              ),
+                              width: Get.width * 0.2,
+                              child: DropdownButtonFormField(
+                                alignment: Alignment.center,
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                                icon: Icon(
+                                  Icons.arrow_drop_down_sharp,
+                                  color: Colors.orange,
+                                  size: 30,
+                                ),
+                                value: controller.sheetName.value,
+                                onChanged: (val) {
+                                  controller.setSheetName(val as String);
+                                },
+                                selectedItemBuilder: (context) {
+                                  return [Text('1'), Text('2'), Text('3')];
+                                },
+                                dropdownColor: Colors.deepPurple,
+                                items: [
+                                  DropdownMenuItem(child: Text('1'), value: '语文'),
+                                  DropdownMenuItem(child: Text('2'), value: '数学'),
+                                  DropdownMenuItem(child: Text('3'), value: '英语'),
+                                ],
+                              ),
+                            ))
+                      ],
+                    ).asNiku()
+                      ..itemsCenter(),
+                  ),
+
+                  ///
+                  ///
+                  ///
+                  Padding(
+                    padding: EdgeInsets.all(20),
+                    child: Center(
+                      child: InkWell(
+                        child: Container(
+                          padding: EdgeInsets.only(left: 30, right: 30, top: 10, bottom: 10),
+                          decoration: BoxDecoration(
+                            color: Colors.deepPurple,
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child: Text('处理').asNiku()
+                            ..color(Colors.white)
+                            ..fontSize(20),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
