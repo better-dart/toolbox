@@ -4,27 +4,22 @@ A new Flutter project.
 
 - web 版的小工具箱.
 
-## 使用: 
-
-
-> 在线使用: 
-- 浏览器打开: 
-
-> 本地使用: 
-
-- 可以 local run
-- 或者 Build dist 静态文件, 然后浏览器打开.
-
-
 ## 功能: 
 
 - Excel 表格处理
 
 
+## 在线访问: 
 
-## 开发环境: 
+- 浏览器打开: https://better-dart.github.io/toolbox/
+
+
+## 开发:
+
+### 开发环境: 
 
 - flutter: 2.5.3+
+- GetX
 
 
 > run: 
@@ -40,6 +35,31 @@ task init
 task run:web
 
 ```
+
+- 本地浏览器访问
+
+
+## 部署: 
+
+### 发布到 github pages:
+
+- 本项目已配置了 github action, 
+- 当 main 分支有提交, 会自动hook 到 github action,
+- 触发 flutter build 动作, 并自动将编译后的 web 资源发布 gh-pages 分支.
+- 之后就可以访问: https://better-dart.github.io/toolbox/
+
+### 本地发布:
+
+- 编译:
+
+```bash
+
+task release:web
+
+```
+
+- 编译结果: build/web 下
+
 
 
 
