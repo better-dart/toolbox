@@ -210,6 +210,15 @@ class ExcelView extends GetView<ExcelController> {
                       ..itemsCenter(),
                   ),
 
+                  ListTile(
+                    leading: Icon(
+                      Icons.check_box,
+                      color: Colors.orange,
+                    ),
+                    title: Text('筛选条件:(==某个值)', style: contentStyle),
+                    trailing: Text('1班', style: contentStyle),
+                  ),
+
                   ///
                   ///
                   ///
