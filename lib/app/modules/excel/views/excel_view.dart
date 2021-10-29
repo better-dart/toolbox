@@ -5,6 +5,9 @@ import '/app/data/index.dart';
 import '../controllers/excel_controller.dart';
 
 class ExcelView extends GetView<ExcelController> {
+  final contentStyle = TextStyle(fontSize: 18, color: Colors.orange);
+  final btnStyle = TextStyle(fontSize: 18, color: Colors.white);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,19 +48,16 @@ class ExcelView extends GetView<ExcelController> {
                             color: Colors.orange,
                           ),
                           SizedBox(width: 10),
-                          Text('Step1: 选择源文件 ...').asNiku()
-                            ..color(Colors.orange)
-                            ..fontSize(20),
+                          Text('Step1: 选择源文件 ...', style: contentStyle),
                           SizedBox(width: 10),
                           Container(
-                              padding: EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                color: Colors.deepPurple,
-                              ),
-                              child: Text('点击').asNiku()
-                                ..fontSize(20)
-                                ..color(Colors.white)),
+                            padding: EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.deepPurple,
+                            ),
+                            child: Text('点击', style: btnStyle),
+                          ),
                         ],
                       ).asNiku()
                         ..itemsCenter(),
@@ -77,12 +77,9 @@ class ExcelView extends GetView<ExcelController> {
                           color: Colors.orange,
                         ),
                         SizedBox(width: 10),
-                        Text('已打开文件路径:').asNiku()
-                          ..fontSize(20)
-                          ..color(Colors.orange),
+                        Text('已打开文件路径:', style: contentStyle),
                         Obx(
                           () => Container(
-                            width: Get.width * 0.5,
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               color: Colors.deepPurple,
@@ -110,9 +107,7 @@ class ExcelView extends GetView<ExcelController> {
                           color: Colors.orange,
                         ),
                         SizedBox(width: 10),
-                        Text('工作表名称:').asNiku()
-                          ..fontSize(20)
-                          ..color(Colors.orange),
+                        Text('工作表名称:', style: contentStyle),
                         SizedBox(width: 10),
                         Obx(() => Container(
                               // padding: EdgeInsets.all(5),
@@ -123,10 +118,7 @@ class ExcelView extends GetView<ExcelController> {
                               width: Get.width * 0.2,
                               child: DropdownButtonFormField(
                                 alignment: Alignment.center,
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                ),
+                                style: btnStyle,
                                 icon: Icon(
                                   Icons.arrow_drop_down_sharp,
                                   color: Colors.orange,
@@ -164,9 +156,7 @@ class ExcelView extends GetView<ExcelController> {
                           color: Colors.orange,
                         ),
                         SizedBox(width: 10),
-                        Text('筛选第几列:').asNiku()
-                          ..fontSize(20)
-                          ..color(Colors.orange),
+                        Text('筛选第几列:', style: contentStyle),
                         SizedBox(width: 10),
                         Obx(() => Container(
                               // padding: EdgeInsets.all(5),
@@ -177,10 +167,7 @@ class ExcelView extends GetView<ExcelController> {
                               width: Get.width * 0.2,
                               child: DropdownButtonFormField(
                                 alignment: Alignment.center,
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                ),
+                                style: btnStyle,
                                 icon: Icon(
                                   Icons.arrow_drop_down_sharp,
                                   color: Colors.orange,
@@ -219,9 +206,7 @@ class ExcelView extends GetView<ExcelController> {
                             color: Colors.deepPurple,
                             borderRadius: BorderRadius.circular(5),
                           ),
-                          child: Text('处理').asNiku()
-                            ..color(Colors.white)
-                            ..fontSize(20),
+                          child: Text('处理', style: btnStyle),
                         ),
                       ),
                     ),
