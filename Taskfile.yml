@@ -183,6 +183,7 @@ tasks:
   activate: # activate tools
     cmds:
       - pub global activate get_cli
+      - pub global activate dhttpd
     ignore_error: true
 
   deactivate:
