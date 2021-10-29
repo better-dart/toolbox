@@ -2,15 +2,45 @@
 
 A new Flutter project.
 
-## Getting Started
+- web 版的小工具箱.
 
-This project is a starting point for a Flutter application.
+## 使用: 
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+> 在线使用: 
+- 浏览器打开: 
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+> 本地使用: 
+
+- 可以 local run
+- 或者 Build dist 静态文件, 然后浏览器打开.
+
+
+## 功能: 
+
+- Excel 表格处理
+
+
+
+## 开发环境: 
+
+- flutter: 2.5.3+
+
+
+> run: 
+
+
+```bash
+
+# install:
+task init
+
+
+# run:
+task run:web
+
+```
+
+
+
+
