@@ -1,3 +1,4 @@
+import 'package:excel/excel.dart';
 import 'package:file_selector/file_selector.dart';
 import 'package:get/get.dart';
 import 'package:toolbox/app/modules/excel/views/excel_view.dart';
@@ -51,8 +52,28 @@ class ExcelController extends GetxController {
     }
 
     /// set:
-    inFile.value = file.path;
+    inFile.value = file.name;
+    print('open file path: ${inFile}, ${file.mimeType},');
 
-    print('open file path: ${inFile}');
+    ///
+    /// 读取文件:
+    ///
+    var raw = await file.readAsBytes();
+
+    ///
+    /// 解析 Excel 文件:
+    ///
+    var excel = Excel.decodeBytes(raw);
+
+    ///
+    /// row = Data() 是每个单元格的数据, eg Data( 用户名, 2, 49, null, Sheet1),
+    ///
+    for (var table in excel.tables.keys) {
+      print('\ttable name: $table, maxCols: ${excel.tables[table]!.maxCols}, maxRows:${excel.tables[table]!.maxRows}'); //sheet Name
+
+      for (var row in excel.tables[table]!.rows) {
+        print("\trow: $row\n");
+      }
+    }
   }
 }
