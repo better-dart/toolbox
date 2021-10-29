@@ -12,6 +12,8 @@ class ExcelController extends GetxController {
   /// input file:
   final inData = <User>[].obs;
 
+  final sheetName = '语文'.obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -32,6 +34,10 @@ class ExcelController extends GetxController {
 
   @override
   void onClose() {}
+
+  void setSheetName(String name) {
+    sheetName.value = name;
+  }
 
   Future<void> selectFile() async {
     final typeGroup = XTypeGroup(

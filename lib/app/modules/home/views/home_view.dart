@@ -22,7 +22,7 @@ class HomeView extends GetView<HomeController> {
               tabs: controller.tabs.map((e) => e['title'] as Widget).toList(),
               indicatorSize: TabBarIndicatorSize.label,
               labelStyle: TextStyle(
-                fontSize: 22,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),

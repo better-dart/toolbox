@@ -27,51 +27,148 @@ class ExcelView extends GetView<ExcelController> {
             ///
             ///
 
-            InkWell(
-              onTap: () async {
-                await controller.selectFile();
-              },
-              child: Container(
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.handyman,
-                      color: Colors.orange,
-                    ),
-                    SizedBox(width: 10),
-                    Text('Step1: 选择源文件 ...').asNiku()
-                      ..color(Colors.orange)
-                      ..fontSize(20),
-                    SizedBox(width: 10),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), color: Colors.white),
-                      child: Text('点击').asNiku()
-                        ..color(Colors.blueAccent)
-                        ..fontSize(20),
-                    ),
-                  ],
-                ).asNiku()
-                  ..itemsCenter(),
+            Card(
+              child: ListView(
+                shrinkWrap: true,
+                padding: EdgeInsets.all(10),
+                children: [
+                  InkWell(
+                    onTap: () async {
+                      await controller.selectFile();
+                    },
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.handyman,
+                          color: Colors.orange,
+                        ),
+                        SizedBox(width: 10),
+                        Text('Step1: 选择源文件 ...').asNiku()
+                          ..color(Colors.orange)
+                          ..fontSize(20),
+                        SizedBox(width: 10),
+                        Container(
+                            padding: EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.blueAccent,
+                            ),
+                            child: Text('点击').asNiku()
+                              ..fontSize(20)
+                              ..color(Colors.white)),
+                      ],
+                    ).asNiku()
+                      ..itemsCenter(),
+                  ),
+
+                  SizedBox(height: 20),
+
+                  ///
+                  ///
+                  ///
+                  ///
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.file_download_done,
+                        color: Colors.orange,
+                      ),
+                      SizedBox(width: 10),
+                      Text('已打开文件路径:').asNiku()
+                        ..fontSize(20)
+                        ..color(Colors.orange),
+                      Obx(
+                        () => Container(
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color: Colors.deepPurple,
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child: Text('${controller.inFile}').asNiku()
+                            ..fontSize(20)
+                            ..color(Colors.orange),
+                        ),
+                      ),
+                    ],
+                  ).asNiku()
+                    ..itemsCenter(),
+
+                  SizedBox(height: 20),
+
+                  ///
+                  ///
+                  ///
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.file_present,
+                        color: Colors.orange,
+                      ),
+                      SizedBox(width: 10),
+                      Text('工作表名称:').asNiku()
+                        ..fontSize(20)
+                        ..color(Colors.orange),
+                      SizedBox(width: 10),
+                      Obx(() => Container(
+                            // padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.deepPurple,
+                            ),
+                            width: Get.width * 0.2,
+                            child: DropdownButtonFormField(
+                              alignment: Alignment.center,
+                              style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                              ),
+                              icon: Icon(
+                                Icons.arrow_drop_down_sharp,
+                                color: Colors.orange,
+                                size: 30,
+                              ),
+                              value: controller.sheetName.value,
+                              onChanged: (val) {
+                                controller.setSheetName(val as String);
+                              },
+                              selectedItemBuilder: (context) {
+                                return [Text('语文'), Text('数学'), Text('英语')];
+                              },
+                              items: [
+                                DropdownMenuItem(
+                                  child: Text('语文'),
+                                  value: '语文',
+                                ),
+                                DropdownMenuItem(child: Text('数学'), value: '数学'),
+                                DropdownMenuItem(child: Text('英语'), value: '英语'),
+                              ],
+                            ),
+                          ))
+                    ],
+                  ).asNiku()
+                    ..itemsCenter(),
+                ],
               ),
             ),
 
-            Row(
-              children: [
-                Icon(
-                  Icons.file_download_done,
-                  color: Colors.orange,
+            ///
+            ///
+            ///
+            ///
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Card(
+                child: Form(
+                  child: ListView(
+                    shrinkWrap: true,
+                    children: [],
+                  ),
                 ),
-                SizedBox(width: 10),
-                Obx(
-                  () => Text('已打开文件路径: ${controller.inFile}').asNiku()
-                    ..fontSize(20)
-                    ..color(Colors.orange),
-                ),
-              ],
-            ).asNiku()
-              ..itemsCenter(),
+              ),
+            ),
 
+            ///
+            ///
             ///
             PaginatedDataTable(
               header: Text('数据预览:').asNiku()
