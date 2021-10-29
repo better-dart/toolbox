@@ -137,6 +137,7 @@ tasks:
     cmds:
       - task: do
         vars: {CMD: "build web --release --web-renderer html"}  # 不使用 canvaskit.wasm, 优化加载速度
+      - cd ${FLUTTER_APP_ROOT}/${FLUTTER_APP_NAME}; open build/web/
 
   release:ios:
     cmds:
