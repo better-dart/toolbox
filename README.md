@@ -12,6 +12,11 @@ A new Flutter project.
 ## 在线访问: 
 
 - 浏览器打开: https://better-dart.github.io/toolbox/
+- 支持手机访问 H5 页面
+
+> 预览效果: 
+
+![](./assets/images/preview.png)
 
 
 ## 开发:
