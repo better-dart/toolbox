@@ -144,6 +144,23 @@ class ExcelView extends GetView<ExcelController> {
                       ..itemsCenter(),
                   ),
 
+                  ListTile(
+                    leading: Icon(
+                      Icons.check_box,
+                      color: Colors.orange,
+                    ),
+                    title: Text('最大行数:', style: contentStyle),
+                    trailing: Text('1000', style: contentStyle),
+                  ),
+                  ListTile(
+                    leading: Icon(
+                      Icons.check_box,
+                      color: Colors.orange,
+                    ),
+                    title: Text('最大列数:', style: contentStyle),
+                    trailing: Text('50', style: contentStyle),
+                  ),
+
                   ///
                   ///
                   ///
