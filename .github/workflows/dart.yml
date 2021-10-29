@@ -1,0 +1,35 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Dart
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '2.5.3'
+      - run: flutter pub get
+      #
+      # release:
+      #
+      - run: flutter build web --release --web-renderer html
+      - run: git checkout gh-pages
+      - run: \cp -rf build/web/ docs/
+      - run: git add docs/
+      - run: git mv -f docs/*.* . 
+      - run: git commit "auto update - github action"
+      - run: git push origin gh-pages:gh-pages
+
