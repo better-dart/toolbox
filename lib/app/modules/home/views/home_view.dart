@@ -20,6 +20,11 @@ class HomeView extends GetView<HomeController> {
           appBar: AppBar(
             title: TabBar(
               tabs: controller.tabs.map((e) => e['title'] as Widget).toList(),
+              indicatorSize: TabBarIndicatorSize.label,
+              labelStyle: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             centerTitle: true,
 

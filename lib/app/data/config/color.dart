@@ -4,7 +4,7 @@ final white1 = Colors.white;
 final white2 = Color(0xffeeeeee);
 
 // Define yellow colors here
-final primaryYellow = Color(0xffffc045);
+final primaryYellow = Colors.deepPurple; // Colors.deepPurple // Color(0xffffc045)
 final secondaryYellow = Color(0xfffdb827);
 final secondaryGrey = Color(0xff3a4750);
 final primaryGrey = Color(0xff303841);
