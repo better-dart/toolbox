@@ -13,8 +13,11 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    name: build flutter web app
+    env:
+      my_secret: ${{secrets.commit_secret}}
 
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -26,10 +29,23 @@ jobs:
       # release:
       #
       - run: flutter build web --release --web-renderer html
-      - run: git checkout gh-pages
-      - run: \cp -rf build/web/ docs/
-      - run: git add docs/
-      - run: git mv -f docs/*.* . 
-      - run: git commit "auto update - github action"
-      - run: git push origin gh-pages:gh-pages
+      - run: |
+          cd build/web
+          git init
+          git config --global user.email hhglory@outlook.com
+          git config --global user.name hhglory
+          git status
+          git remote add origin https://${{secrets.commit_secret}}@github.com/hhstore/toolbox.git
+          git checkout -b gh-pages
+          git add --all
+          git commit -m "auto update by action"
+          git push origin gh-pages -f
+
+
+#      - run: git checkout gh-pages
+#      - run: \cp -rf build/web/ docs/
+#      - run: git add docs/
+#      - run: git mv -f docs/*.* .
+#      - run: git commit "auto update - github action"
+#      - run: git push origin gh-pages:gh-pages
 
