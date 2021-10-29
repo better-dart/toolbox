@@ -1,3 +1,4 @@
+import 'package:file_selector/file_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,6 +19,9 @@ class ExcelView extends GetView<ExcelController> {
         child: ListView(
           shrinkWrap: true,
           children: [
+            ///
+            ///
+            ///
             ListTile(
               title: Text('Excel 表格数据筛选:').asNiku()
                 ..color(Colors.redAccent)
@@ -27,6 +31,23 @@ class ExcelView extends GetView<ExcelController> {
                 color: Get.theme.primaryColor,
               ),
             ),
+
+            ListTile(
+              title: Text('Step1: 选择源文件..').asNiku()..color(Colors.blueAccent),
+              onTap: () async {
+                // Get.defaultDialog(title: "选择文件...");
+
+                final typeGroup = XTypeGroup(label: 'images', extensions: ['jpg', 'png']);
+                final file = await openFile(acceptedTypeGroups: [typeGroup]);
+
+                print('open file path: ${file!.path}');
+              },
+            ),
+
+            SizedBox(
+              height: Get.height * 0.3,
+            ),
+
             GridView(
               shrinkWrap: true,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
