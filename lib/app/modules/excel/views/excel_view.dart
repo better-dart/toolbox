@@ -11,7 +11,7 @@ class ExcelView extends GetView<ExcelController> {
       appBar: AppBar(
         title: Text('Excel 表格数据筛选工具').asNiku()
           ..fontSize(24)
-          ..color(Colors.redAccent)
+          ..color(Colors.white)
           ..fontWeight(FontWeight.bold)
           ..center(),
         centerTitle: true,
@@ -51,7 +51,7 @@ class ExcelView extends GetView<ExcelController> {
                             padding: EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5),
-                              color: Colors.blueAccent,
+                              color: Colors.deepPurple,
                             ),
                             child: Text('点击').asNiku()
                               ..fontSize(20)
@@ -79,6 +79,7 @@ class ExcelView extends GetView<ExcelController> {
                         ..color(Colors.orange),
                       Obx(
                         () => Container(
+                          width: Get.width * 0.5,
                           padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
                             color: Colors.deepPurple,
@@ -134,11 +135,9 @@ class ExcelView extends GetView<ExcelController> {
                               selectedItemBuilder: (context) {
                                 return [Text('语文'), Text('数学'), Text('英语')];
                               },
+                              dropdownColor: Colors.deepPurple,
                               items: [
-                                DropdownMenuItem(
-                                  child: Text('语文'),
-                                  value: '语文',
-                                ),
+                                DropdownMenuItem(child: Text('语文'), value: '语文'),
                                 DropdownMenuItem(child: Text('数学'), value: '数学'),
                                 DropdownMenuItem(child: Text('英语'), value: '英语'),
                               ],
