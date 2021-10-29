@@ -25,6 +25,9 @@ jobs:
         with:
           flutter-version: '2.5.3'
       - run: flutter pub get
+      - run: pub global activate get_cli
+      - run: get generate locales assets/locales on data/locales
+
       #
       # release:
       #
