@@ -102,7 +102,7 @@ tasks:
   run:web:
     cmds:
       - task: do
-        vars: {CMD: "run --debug -d chrome --web-renderer html"} # load speed
+        vars: {CMD: "run --debug -d chrome --web-renderer html "} # load speed
 
   deploy:
     cmds:
@@ -136,7 +136,7 @@ tasks:
   release:web:
     cmds:
       - task: do
-        vars: {CMD: "build web --release --web-renderer html"}  # 不使用 canvaskit.wasm, 优化加载速度
+        vars: {CMD: "build web --release --web-renderer html --base-href /toolbox/"}  # 不使用 canvaskit.wasm, 优化加载速度 // fix baseHref
       - cd ${FLUTTER_APP_ROOT}/${FLUTTER_APP_NAME}; open build/web/
 
   release:ios:
