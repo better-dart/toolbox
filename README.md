@@ -77,6 +77,11 @@ task release:chrome
 
 - 浏览器, 打开插件, 加载本地插件:
 
+
+![](./assets/images/chrome_ext_import.png.png)
+
+
+- 插件效果:
+
+
 ![](./assets/images/chrome_ext.png)
-
-
