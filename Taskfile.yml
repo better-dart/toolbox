@@ -139,6 +139,14 @@ tasks:
         vars: {CMD: "build web --release --web-renderer html --base-href /toolbox/"}  # 不使用 canvaskit.wasm, 优化加载速度 // fix baseHref
       - cd ${FLUTTER_APP_ROOT}/${FLUTTER_APP_NAME}; open build/web/
 
+  # fix chrome:
+  release:chrome:
+    cmds:
+      # - task: clean
+      - task: do
+        vars: {CMD: "build web --release --web-renderer html --csp"}  # 不使用 canvaskit.wasm, 优化加载速度 // fix baseHref
+      - cd ${FLUTTER_APP_ROOT}/${FLUTTER_APP_NAME}; open build/web/
+
   release:ios:
     cmds:
       - task: do

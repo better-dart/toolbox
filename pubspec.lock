@@ -57,6 +57,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.1"
+  build_cli_annotations:
+    dependency: transitive
+    description:
+      name: build_cli_annotations
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.0.0"
   build_config:
     dependency: transitive
     description:
@@ -204,6 +211,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.2.0"
+  dhttpd:
+    dependency: "direct dev"
+    description:
+      name: dhttpd
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "4.0.1"
   equatable:
     dependency: transitive
     description:
@@ -513,6 +527,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.2.0"
+  shelf_static:
+    dependency: transitive
+    description:
+      name: shelf_static
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.1.0"
   shelf_web_socket:
     dependency: transitive
     description:

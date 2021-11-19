@@ -65,7 +65,18 @@ task release:web
 
 - 编译结果: build/web 下
 
+### 发布 chrome 插件:
 
+- 编译:
 
+```bash
+
+task release:chrome
+
+```
+
+- 浏览器, 打开插件, 加载本地插件:
+
+![](./assets/images/chrome_ext.png)
 
 
