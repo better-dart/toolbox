@@ -9,6 +9,11 @@ A new Flutter project.
 - Excel 表格处理
 
 
+## 平台支持:
+
+- [x] H5 web: PC/mobile
+- [x] chrome 插件方式使用
+
 ## 在线访问:
 
 - 浏览器打开: https://better-dart.github.io/toolbox/
