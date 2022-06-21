@@ -8,6 +8,7 @@
 .buildlog/
 .history
 .svn/
+migrate_working_dir/
 
 # IntelliJ related
 *.iml
@@ -45,18 +46,14 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-
 ################################################################
-# add at 2021-05
+# update at 2022-06
 ################################################################
-
 
 # version:
 .fvm/flutter_sdk
+
 ios/build/
-ios/Podfile.lock
-pubspec.lock
-ios/Runner.xcodeproj/project.pbxproj
 
 # generate files:
 *.g.dart
@@ -65,7 +62,6 @@ tmp/
 *.tmp
 *.tmp.*
 .env
-
 
 # storage files during local tests
 **/*.bak
