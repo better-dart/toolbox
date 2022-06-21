@@ -8,17 +8,6 @@ version: '3'
 #
 ################################################################################################
 
-
-#
-# sub namespace: https://taskfile.dev/#/usage?id=including-other-taskfiles
-#
-includes:
-  app:
-    taskfile: ./packages/app/Taskfile.yml
-    dir: ./packages/app/
-
-
-
 #
 # global vars: https://taskfile.dev/#/usage?id=variables
 #
@@ -30,8 +19,8 @@ env:
   ENV1: testing
 
 # env file:
-dotenv:
-  - .env
+#dotenv:
+#  - .env
 
 ################################################################################################
 
